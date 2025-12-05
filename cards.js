@@ -73,9 +73,12 @@ async function loadRemote() {
         if (!res.ok) throw new Error(`Remote request failed: ${res.status}`);
         const json = await res.json();
         let data = json.record ?? json;
+        if (!Array.isArray(data) && data && Array.isArray(data.record)) {
+            data = data.record;
+        }
         if (!Array.isArray(data)) data = [];
         renderCards(data);
-        setStatus(data.length ? 'Remote data loaded' : 'Remote data empty');
+        setStatus(data.length ? `Remote data loaded (${data.length})` : 'Remote data empty');
     } catch (err) {
         setStatus('Remote load failed');
         console.error(err);
