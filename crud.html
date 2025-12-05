@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Project Data Admin</title>
+    <meta name="description" content="Manage project cards data">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="view-transitions.css">
+    <script src="theme-toggle.js"></script>
+    <script src="project-card.js" type="module"></script>
+    <script src="crud.js" type="module" defer></script>
+</head>
+<body>
+    <button id="theme-toggle" aria-label="Toggle theme">
+        <span class="theme-icon">🌙</span>
+        <span class="theme-text">Dark Mode</span>
+    </button>
+
+    <noscript>
+        <style>
+            #theme-toggle {
+                display: none;
+            }
+        </style>
+    </noscript>
+
+    <header>
+        <h1>Ryan Jia-Ming Wong</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="crud.html">Data Admin</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Project Data Admin</h1>
+        <p>Use these forms to create, update, or delete cards in localStorage or the JSONBin dataset.</p>
+
+        <div class="crud-layout">
+            <section class="panel">
+                <h2>Local Storage</h2>
+                <form id="local-form">
+                    <label for="local-id">ID</label>
+                    <input id="local-id" name="id" required>
+
+                    <label for="local-title">Title</label>
+                    <input id="local-title" name="title" required>
+
+                    <label for="local-meta">Meta</label>
+                    <input id="local-meta" name="meta">
+
+                    <label for="local-description">Description</label>
+                    <textarea id="local-description" name="description" required></textarea>
+
+                    <label for="local-link">Link</label>
+                    <input id="local-link" name="link">
+
+                    <label for="local-linklabel">Link Label</label>
+                    <input id="local-linklabel" name="linkLabel" value="Learn more">
+
+                    <label for="local-image">Image URL</label>
+                    <input id="local-image" name="image">
+
+                    <label for="local-alt">Alt text</label>
+                    <input id="local-alt" name="alt">
+
+                    <label for="local-tags">Tags (comma separated)</label>
+                    <input id="local-tags" name="tags">
+
+                    <div class="controls">
+                        <button type="button" id="local-create">Create</button>
+                        <button type="button" id="local-update">Update</button>
+                        <button type="button" id="local-delete">Delete</button>
+                    </div>
+                    <span class="status" id="local-status"></span>
+                </form>
+                <div id="local-preview"></div>
+            </section>
+
+            <section class="panel">
+                <h2>Remote (JSONBin)</h2>
+                <form id="remote-form">
+                    <label for="remote-id">ID</label>
+                    <input id="remote-id" name="id" required>
+
+                    <label for="remote-title">Title</label>
+                    <input id="remote-title" name="title" required>
+
+                    <label for="remote-meta">Meta</label>
+                    <input id="remote-meta" name="meta">
+
+                    <label for="remote-description">Description</label>
+                    <textarea id="remote-description" name="description" required></textarea>
+
+                    <label for="remote-link">Link</label>
+                    <input id="remote-link" name="link">
+
+                    <label for="remote-linklabel">Link Label</label>
+                    <input id="remote-linklabel" name="linkLabel" value="Learn more">
+
+                    <label for="remote-image">Image URL</label>
+                    <input id="remote-image" name="image">
+
+                    <label for="remote-alt">Alt text</label>
+                    <input id="remote-alt" name="alt">
+
+                    <label for="remote-tags">Tags (comma separated)</label>
+                    <input id="remote-tags" name="tags">
+
+                    <div class="controls">
+                        <button type="button" id="remote-create">Create</button>
+                        <button type="button" id="remote-update">Update</button>
+                        <button type="button" id="remote-delete">Delete</button>
+                    </div>
+                    <span class="status" id="remote-status"></span>
+                </form>
+                <div id="remote-preview"></div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <span>&copy; 2025 Ryan Wong</span><br>
+        <a href="https://github.com/ryanjwong">GitHub</a> [cite: 2] | 
+        <a href="https://www.linkedin.com/in/ryanjmwong/">LinkedIn</a> [cite: 7] |
+        <a href="experiments.html">HTML Experiments Page</a>
+        <hello-world></hello-world>
+    </footer>
+</body>
+</html>
+
