@@ -1,6 +1,6 @@
-693365e943b1c97be9da8f19const localKey = 'portfolio-projects-hw5';
-const remoteReadUrl = 'https://api.jsonbin.io/v3/b/69336680d0ea881f40159cb0/latest';
-const remoteWriteUrl = 'https://api.jsonbin.io/v3/b/69336680d0ea881f40159cb0';
+const localKey = 'portfolio-projects-hw5';
+const remoteReadUrl = 'https://api.jsonbin.io/v3/b/69336c6a43b1c97be9da96fd/latest';
+const remoteWriteUrl = 'https://api.jsonbin.io/v3/b/69336c6a43b1c97be9da96fd';
 const accessKey = '$2a$10$r2fmCTetqzn7ZABJqS00AezPV8YhrokNMZeX07kFMsoLkXPOSO6nq';
 
 const localForm = document.getElementById('local-form');
