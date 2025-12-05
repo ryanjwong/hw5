@@ -19,7 +19,7 @@ if ('startViewTransition' in document) {
                         return;
                     }
 
-                    const transition = document.startViewTransition(async () => {
+                    document.startViewTransition(async () => {
                         const response = await fetch(href);
                         const html = await response.text();
                         const parser = new DOMParser();
