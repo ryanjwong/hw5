@@ -4,20 +4,13 @@
     <meta charset="UTF-8">
     <title>Ryan Wong's Projects</title>
     <meta name="description" content="Projects by Ryan Wong">
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="view-transitions.css">
-    <style>
-        project-card {
-            display: block;
-            border: 1px dashed grey;
-            padding: 1em;
-            margin-bottom: 1em;
-        }
-    </style>
     <script src="theme-toggle.js"></script>
     <script src="view-transitions.js"></script>
+    <script src="project-card.js" type="module"></script>
     <script src="hello-world.js" defer></script>
+    <script src="cards.js" type="module" defer></script>
 </head>
 <body>
     <button id="theme-toggle" aria-label="Toggle theme">
@@ -40,6 +33,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="projects.html">Projects</a></li>
+                <li><a href="crud.html">Data Admin</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
@@ -47,25 +41,12 @@
 
     <main>
         <h1>My Projects</h1>
-        
-        <project-card> <article>
-                <h2>Atlas-CLI (Go)</h2> [cite: 34]
-                <p><em>July 2025 - Present</em></p> [cite: 35]
-                <p>
-                    Wrote a CLI using Go to manage infrastructure across different providers (AWS, GCP, minikube). [cite: 36] Installation and configuration of ArgoCD, Prometheus, and Grafana will be automated through Ansible playbooks. [cite: 36] GitOps will be set up via ArgoCD and automatic creation of Github Repositories alongside Github Actions. [cite: 36]
-                </p>
-            </article>
-        </project-card>
-
-        <project-card>
-            <article>
-                <h2>Anonymous Web Services (NodeJS)</h2> [cite: 37]
-                <p><em>Jan 2023 - Dec 2023</em></p> [cite: 37]
-                <p>
-                    Created a pseudo AWS Lambda code execution platform, where clients connect to hosts through UDP holepunching. [cite: 37] This project integrated the hyperswarm library to establish a secure P2P connection for sending code via a custom CLI. [cite: 37]
-                </p>
-            </article>
-        </project-card>
+        <div class="controls">
+            <button id="load-local">Load Local</button>
+            <button id="load-remote">Load Remote</button>
+            <span class="status" id="status-text"></span>
+        </div>
+        <div class="card-grid" id="cards-container"></div>
     </main>
 
     <footer>
