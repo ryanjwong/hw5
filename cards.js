@@ -1,5 +1,5 @@
 const localKey = 'portfolio-projects-hw5';
-const remoteUrl = 'https://api.jsonbin.io/v3/b/69336680d0ea881f40159cb0/latest';
+const remoteUrl = 'https://api.jsonbin.io/v3/b/69336c6a43b1c97be9da96fd/latest';
 const accessKey = '$2a$10$r2fmCTetqzn7ZABJqS00AezPV8YhrokNMZeX07kFMsoLkXPOSO6nq';
 
 const seedLocal = [
